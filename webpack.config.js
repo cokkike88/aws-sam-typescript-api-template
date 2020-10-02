@@ -1,6 +1,12 @@
 const AwsSamPlugin = require("aws-sam-webpack-plugin");
-const awsSamPlugin = new AwsSamPlugin();
 const path = require('path');
+
+const templateUrl = process.env.NODE_ENV != 'production'? 'template-dev.yml': 'template.yml';
+const awsSamPlugin = new AwsSamPlugin({
+  projects: {
+    "pidelorapido-api": templateUrl
+  }
+});
 
 module.exports = {
   // Loads the entry object from the AWS::Serverless::Function resources in your

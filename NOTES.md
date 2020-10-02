@@ -1,19 +1,36 @@
 # init project
 sam init
+- To Use the template -> select the option 2 and enter
+https://github.com/cokkike88/aws-sam-typescript-api-template.git
 
 # build functions
+- If the project doesn't have typescript config
 sam build
+sam build -t <path-of-the-yml-file-to-want-to-use-to-build>
+
+- If the project have typescript config
+- IMPORTANT: You have to config NODE_ENV enviroment
+- To production NODE_ENV = production -> This'll select the production yml
+- To development NODE_ENV = development -> This'll select the development yml
+npm run build
+
+# build specific function
+sam build <FUNCTION-DEFINED-YMAL>
+
 
 # validate template [yml|yaml]
 sam validate
 sam validate -t <path [yml|yaml]>
 
-# build specific function
-sam build <FUNCTION-DEFINED-YMAL>
-
 # invoke local function
 sam local invoke <function name in yml file>
 sam local invoke -n env.json -e events/event-get-all-items.json getAllItemsFunction
+
+# invoke local api
+- Up api in debug mode
+sam local start-api -p 3008 -d 5858
+-p port to up the api in docker
+-d port to debug the api this port has to be the same that the .vscode/launch.json file
 
 # debbug mode console
 sam local invoke --debug-port 5858 <function name in yml file>

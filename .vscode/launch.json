@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "getAllItemsFunction",
+      "name": "pidelorapido-api:getAllItemsFunction",
       "type": "node",
       "request": "attach",
       "address": "localhost",

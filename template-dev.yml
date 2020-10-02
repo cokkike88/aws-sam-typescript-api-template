@@ -9,12 +9,12 @@ Globals:
   Function:
     Environment:
       Variables:
-        STAGE: prod
+        STAGE: dev
 
 Parameters:
   env:
     Type: String
-    Default: prod
+    Default: dev
     AllowedValues:
       - dev
       - prod

@@ -6,7 +6,7 @@ Globals:
   Function:
     Environment:
       Variables:
-        STAGE: env
+        STAGE: dev
 Parameters:
   env:
     Type: String
